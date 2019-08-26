@@ -19,7 +19,7 @@ const Signup = () => {
       .post('', user)
       .then(res => {
           console.log(res)
-          //props.history.push(/* '/login' SET UP THIS ROUTE! */) !
+          //props.history.push(/* '/login' SET UP THIS ROUTE! */) !!
       })
       .catch(err => console.log(err))
   }
