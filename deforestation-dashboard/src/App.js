@@ -1,4 +1,6 @@
 import React from 'react';
+import TabNav from './Components/TabNav';
+
 
 import './App.css';
 
@@ -7,6 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
        DEFORESTATION DASHBOARD
+       {/* <TabNav /> */}
       </header>
     </div>
   );
