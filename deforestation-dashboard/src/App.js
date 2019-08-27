@@ -1,8 +1,8 @@
 import React from 'react';
-import TabNav from './Components/TabNav';
+import TabNav from './components/TabNav';
 import { Route } from 'react-router-dom';
-import Login from './Components/Login';
-import Signup from './Components/Signup';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 
 import './App.css';
@@ -15,9 +15,9 @@ function App() {
        {/* <TabNav /> */}
       </header>
 
-      <Route path='/' component={Home} />
-      <Route path='/country' component={country} />
-      <Route path='/savedCharts' component={saved} />
+      {/* <Route path='/' component={Home} /> */}
+      {/* <Route path='/country' component={country} /> */}
+      {/* <Route path='/savedCharts' component={saved} /> */}
       <Route path='/login' component={Login} />
       <Route path='/register' component={Signup} />
     </div>
