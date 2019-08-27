@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, Route } from 'react-router-dom';
 import axios from 'axios';
 // import * as Yup from "yup";
 
@@ -47,7 +48,9 @@ const Login = () => {
             onChange={changeHandler}
           />
         </label>
+        <button>Login</button>
       </form>
+      <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
     </div>
   );
 };
