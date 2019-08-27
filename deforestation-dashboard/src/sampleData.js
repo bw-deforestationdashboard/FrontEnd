@@ -1,4 +1,4 @@
-const CountryData = {
+export default [{
 "Country": {
 "0": "Bolivia",
 "1": "Brazil",
@@ -34,6 +34,4 @@ const CountryData = {
 "3": 50.2059526116,
 "4": 57.6604675293
 }
-}
-
-export default CountryData;
+}]
