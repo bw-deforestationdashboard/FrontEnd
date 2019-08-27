@@ -1,5 +1,9 @@
 import React, { useState } from "react";
+import { Link, Route } from 'react-router-dom';
 import axios from 'axios';
+// import * as Yup from "yup";
+
+import Logo from './Logo';
 
 const Login = () => {
   const [login, setLogin] = useState({
@@ -25,6 +29,7 @@ const Login = () => {
 
   return (
     <div>
+      <Logo />
       <form onSubmit={submitHandler}>
         <label>
           Username:
@@ -46,9 +51,13 @@ const Login = () => {
             onChange={changeHandler}
           />
         </label>
+        <button>Login</button>
       </form>
+      <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
     </div>
   );
 };
+
+
 
 export default Login;
