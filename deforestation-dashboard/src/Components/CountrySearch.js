@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from './node_modules/react';
 
-import axios from 'axios';
+import axios from './node_modules/axios';
 import Country from './Country';
 
 export default function CountrySearch () {

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import axios from 'axios';
-import axiosWithAuth from '../utils/axiosWithAuth.js'
+import React, { useState } from "./node_modules/react";
+import axios from './node_modules/axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth'
 
 const Signup = () => {
   const [user, setUser] = useState({
