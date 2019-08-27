@@ -4,7 +4,8 @@ import 'semantic-ui-css/semantic.min.css';
 import { Link } from 'react-router-dom';
 
 import SavedPublic from './SavedPublic';
-import CountryList from './CountryList';
+import CountryView from './CountryView';
+import MapView from './MapView';
 
 // const panes = [
 //     { menuItem: 'Map View', render: () => <Tab.Pane></Tab.Pane> },
