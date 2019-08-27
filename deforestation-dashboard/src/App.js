@@ -1,5 +1,5 @@
 import React from 'react';
-import bargraph from '../src/components/bargraph';
+import Bargraph from '../src/components/bargraph';
 import './App.css';
 
 
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
        DEFORESTATION DASHBOARD
       </header>
-     <bargraph />
+     <Bargraph />
     </div>
   );
 }

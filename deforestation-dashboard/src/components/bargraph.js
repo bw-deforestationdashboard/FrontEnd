@@ -4,7 +4,11 @@ import CountryData from '../data/CountryData'
 
 const bargraph = (props) => {
 
-    console.log(CountryData)
+    console.log(CountryData.countries.map(country => {
+       return country.Data
+    }))
+
+
 
     const data = {
         labels: [],
@@ -16,9 +20,8 @@ const bargraph = (props) => {
         }]
     }
 
-
     return (
-        < Line ref="chart" data={data} />
+        < Line data={data} />
 
     )
 }
