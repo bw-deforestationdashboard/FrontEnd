@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import axiosWithAuth from './utils/axiosWithAuth.js'
+import axiosWithAuth from '../utils/axiosWithAuth.js'
 
 const Signup = () => {
   const [user, setUser] = useState({
@@ -62,4 +62,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signup; 

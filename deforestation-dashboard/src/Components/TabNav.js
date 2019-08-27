@@ -2,9 +2,6 @@ import React from 'react';
 import { Tab } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css'
 
-
-
-
 const panes = [
     { menuItem: 'Map View', render: () => <Tab.Pane></Tab.Pane> },
     { menuItem: 'Country View', render: () => <Tab.Pane></Tab.Pane> },
