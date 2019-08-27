@@ -9,8 +9,8 @@ export default function CountryList () {
     console.log(data[0].Country)
 
     const [countries, setCountries] = useState([]);
-    // let obj = CountryData.Country;
-    // let countriesArr = Object.values(obj);//made object into an array of values
+    let obj = CountryData.Country;
+    let countriesArr = Object.values(obj);//made object into an array of values
     
     // useEffect(() => {
     //     axios.get('').then((res)=> {
@@ -19,9 +19,9 @@ export default function CountryList () {
     //     })
     // }, [])
 
-    // useEffect(() => {
-    //     setCountries(countriesArr)
-    // }, [])
+    useEffect(() => {
+        setCountries(countriesArr)
+    }, [])
 
     if(!countries){
        return <p>Loading country data...</p>
