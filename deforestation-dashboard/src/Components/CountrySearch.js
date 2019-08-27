@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from './node_modules/react';
+import React, { useState, useEffect } from 'react';
 
-import axios from './node_modules/axios';
+import axios from 'axios';
 import Country from './Country';
 
 export default function CountrySearch () {
@@ -8,7 +8,7 @@ export default function CountrySearch () {
 
     useEffect(() => {
         axios.get('https://api.brewerydb.com/v2/beer/WHQisc/hops/?key=1edd56c6463bb95e3affc78c869cc95c').then((res)=> {
-            setCountries(res);
+            setCountries(res.data);
         })
     }, [])
     return ([
