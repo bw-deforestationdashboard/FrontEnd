@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   const [data] = useState(sampleData);
-  console.log(data[0].Country)
+
 
   return (
     <div className="App">
