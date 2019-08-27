@@ -3,11 +3,12 @@ import { Tab } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 import SavedPublic from './SavedPublic';
-import CountryList from './CountryList';
+import CountryView from './CountryView';
+import MapView from './MapView';
 
 const panes = [
-    { menuItem: 'Map View', render: () => <Tab.Pane></Tab.Pane> },
-    { menuItem: 'Country View', render: () => <Tab.Pane><CountryList /></Tab.Pane> },
+    { menuItem: 'Map View', render: () => <Tab.Pane><MapView /></Tab.Pane> },
+    { menuItem: 'Country View', render: () => <Tab.Pane><CountryView /></Tab.Pane> },
     { menuItem: 'Saved Charts', render: () => <Tab.Pane><SavedPublic /></Tab.Pane> },
 ]
   

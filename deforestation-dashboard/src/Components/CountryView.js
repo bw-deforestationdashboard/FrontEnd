@@ -3,8 +3,9 @@ import CountryData from '.././sampleData';
 import axios from 'axios';
 import Country from './Country';
 
-export default function CountryList () {
+export default function CountryView () {
     const [countries, setCountries] = useState([]);
+    console.log(CountryData)
     let obj = CountryData.Country;
     let countriesArr = Object.values(obj);//made object into an array of values
     
