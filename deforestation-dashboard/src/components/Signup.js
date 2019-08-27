@@ -3,6 +3,8 @@ import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
 
+import Logo from './Logo';
+
 const Signup = () => {
   const [user, setUser] = useState({
     username: "",
@@ -27,6 +29,7 @@ const Signup = () => {
 
   return (
     <div>
+      <Logo />
       <form onSubmit={submitHandler}>
         <label>
           Username:
