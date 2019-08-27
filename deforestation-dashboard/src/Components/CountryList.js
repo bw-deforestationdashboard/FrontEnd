@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-
+import CountryData from '.././sampleData';
 import axios from 'axios';
 import Country from './Country';
 
-export default function CountrySearch () {
-    const [countries, setCountries] = ([]);
+export default function CountryList () {
+    const [countries, setCountries] = useState([]);
+    console.log(countries);
 
-    useEffect(() => {
-        axios.get('https://api.brewerydb.com/v2/beer/WHQisc/hops/?key=1edd56c6463bb95e3affc78c869cc95c').then((res)=> {
-            setCountries(res.data);
-        })
-    }, [])
+    // useEffect(() => {
+    //     axios.get('').then((res)=> {
+    //         setCountries(res.data);
+    //         console.log(res)
+    //     })
+    // }, [])
     return ([
         <header>Countries</header>,
         countries.map( ctry => {
