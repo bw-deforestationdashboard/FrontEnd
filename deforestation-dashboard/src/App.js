@@ -1,6 +1,7 @@
 import React from 'react';
-import Bargraph from '../src/components/bargraph';
+import Bargraph from './components/bargraph';
 import './App.css';
+import PrivateRoute from '../src/components'
 
 
 function App() {
@@ -14,7 +15,13 @@ function App() {
   );
 }
 
+<div className="App">
 
+<PrivateRoute path= "../src/components" component={} />
+<Route path="/login" component={Login} />
+<Route path="/signup" component={Signup} />
+
+</div>
 
 
 export default App;
