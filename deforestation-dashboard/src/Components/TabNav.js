@@ -1,19 +1,18 @@
 import React from 'react';
-import { useState, useEffect } from 'react-dom';
-// import { Menu } from 'semantic-ui-react';
-// import 'semantic-ui-css';
+import { Tab } from 'semantic-ui-react';
+import 'semantic-ui-css/semantic.min.css'
 
-export default function TabNav () {
-    const [ activeItem, setActiveItem ] = useState([]);
 
-    // handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+
+const panes = [
+    { menuItem: 'Map View', render: () => <Tab.Pane></Tab.Pane> },
+    { menuItem: 'Country View', render: () => <Tab.Pane></Tab.Pane> },
+    { menuItem: 'Saved Charts', render: () => <Tab.Pane></Tab.Pane> },
+
+
+]
   
-    
-      
+  const TabNav = () => <Tab panes={panes} />
   
-      return (
-
-        <p>Hello</p>
-      );
-    
-};
+  export default TabNav
