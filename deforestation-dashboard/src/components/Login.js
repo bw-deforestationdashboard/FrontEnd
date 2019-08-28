@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import Logo from './Logo';
 
-const Login = () => {
+const Login = props => {
   const [login, setLogin] = useState({
     username: "",
     password: ""
@@ -23,6 +23,7 @@ const Login = () => {
           console.log(res)
           localStorage.setItem('token', res.data.payload)
           //need to push to saved items route
+          props.history.push('/main/saved')
       })
       .catch(err => console.log(err))
   }
