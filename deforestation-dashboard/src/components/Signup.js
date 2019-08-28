@@ -3,6 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
 
 import Logo from './Logo';
+import Footer from './Footer';
 
 const Signup = () => {
   const [user, setUser] = useState({
@@ -65,6 +66,7 @@ const Signup = () => {
       <p>
         Already have an account? <Link to="/login">Login here!</Link>
       </p>
+      <Footer />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import axios from 'axios';
 // import * as Yup from "yup";
 
 import Logo from './Logo';
+import Footer from './Footer';
 
 const Login = () => {
   const [login, setLogin] = useState({
@@ -54,6 +55,7 @@ const Login = () => {
         <button>Login</button>
       </form>
       <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+      <Footer />
     </div>
   );
 };
