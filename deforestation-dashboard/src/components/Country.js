@@ -13,34 +13,20 @@ import yellow from '@material-ui/core/colors/yellow';
 export default function Country(props) {
   const { yearArray } = props;
     const useStyles = makeStyles(theme => ({
-        card: {
-          maxWidth: 345,
+      card: {
+        maxWidth: 345,
+      },
+      root: {
+          width: '100%',
+          marginTop: theme.spacing(3),
+          overflowX: 'auto',
         },
-        root: {
-            width: '100%',
-            marginTop: theme.spacing(3),
-            overflowX: 'auto',
-          },
-          table: {
-            minWidth: 650,
-            backgroundColor: yellow[400],
-          },
-        
-      }));
-
-  const useStyles = makeStyles(theme => ({
-    card: {
-      maxWidth: 345
-    },
-    root: {
-      width: "100%",
-      marginTop: theme.spacing(3),
-      overflowX: "auto"
-    },
-    table: {
-      minWidth: 650
-    }
-  }));
+        table: {
+          minWidth: 650,
+          backgroundColor: yellow[400],
+        },
+      
+    }));
 
   const createData = (name ) => {
     return { name };
