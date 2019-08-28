@@ -4,14 +4,23 @@ import axios from 'axios';
 import Map from './Map';
 
 export default function MapView () {
-    const [map, setMap] = useState([]);
+    const [year, setYear] = useState('1990');
 
-    if(!map){
-       return <p>Loading map data...</p>
+    const yearArray = [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
+
+    const handleYear = event => {
+        setYear(event.target.value)
     }
 
-    return ([
-        <header><Map /></header>,
-
-    ]);
+    return (
+        <div>
+            <h2>Map</h2>
+                <select onChange={handleYear}>
+                    {yearArray.map(yearItem => {
+                        return <option value={yearItem}>{yearItem}</option>
+                    })}
+                </select>
+            <Map year={year}/>
+        </div>
+    );
 };
