@@ -1,11 +1,10 @@
 import React from 'react';
 
 export default function Map (props) {
-
+    const { year } = props;
     return(
-        <section>
-            <h2>Map</h2>
-            <p></p>
-        </section>
+        <div>
+            <img style={{ "width": "70%" }} src={require(`../assets/pct_forest_coverage_${year}_map.png`)} alt={`World map of forest area percentage from ${year}`} />
+        </div>
     );
 };
