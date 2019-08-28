@@ -6,6 +6,9 @@ import Main from './components/Main';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { DataContext } from "./contexts/DataContext";
+
+import { SavedContext } from "./contexts/SavedContext";
+
 import "./App.css";
 
 function App() {
@@ -14,12 +17,14 @@ function App() {
   return (
     <div className="App">
       <DataContext.Provider value={data}>
+        <SavedContext.Provider>
         <Switch>
           <Route path='/login' component={Login} />
           <Route path='/register' component={Signup} />
           <Route path='/' component={Main}/>
         </Switch>
-        {/* <Redirect from='/' to='/map-view'/> */}
+        <Redirect from='/' to='/map-view'/>
+        </SavedContext.Provider>
       </DataContext.Provider>
     </div>
   );
