@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import axios from 'axios';
-import axiosWithAuth from './utils/axiosWithAuth.js'
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
+
+import Logo from './Logo';
 
 const Signup = () => {
   const [user, setUser] = useState({
@@ -10,22 +12,23 @@ const Signup = () => {
   });
 
   const changeHandler = e => {
-      setUser({...user, [e.target.name]: e.target.value})
-  }
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
 
   const submitHandler = e => {
-      e.preventDefault();
-      axiosWithAuth
-      .post('', user)
+    e.preventDefault();
+    axiosWithAuth()
+      .post("https://deforestation-back-end.herokuapp.com/api/register", user)
       .then(res => {
-          console.log(res)
-          //props.history.push(/* '/login' SET UP THIS ROUTE! */) !!
+        console.log(res);
+        //props.history.push(/* '/login' SET UP THIS ROUTE! */) !!
       })
-      .catch(err => console.log(err))
-  }
+      .catch(err => console.log(err));
+  };
 
   return (
     <div>
+      <Logo />
       <form onSubmit={submitHandler}>
         <label>
           Username:
@@ -57,9 +60,13 @@ const Signup = () => {
             onChange={changeHandler}
           />
         </label>
+        <button>Register</button>
       </form>
+      <p>
+        Already have an account? <Link to="/login">Login here!</Link>
+      </p>
     </div>
   );
 };
 
-export default Signup;
+export default Signup; 
