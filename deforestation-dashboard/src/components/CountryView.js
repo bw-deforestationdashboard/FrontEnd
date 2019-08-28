@@ -24,7 +24,7 @@ export default function CountryList () {
     }
 
     return ([
-        <header>Countries</header>,
+        <header className='country-view'>Countries</header>,
         countries.map( (ctry, index) => {
             const yearArray = Object.entries(ctry).filter((array) => array[0] !== "Country" && array[0] !== "Code");
 
