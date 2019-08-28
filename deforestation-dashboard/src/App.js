@@ -6,7 +6,6 @@ import Main from './components/Main';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { DataContext } from "./contexts/DataContext";
-
 import "./App.css";
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
           <Route path='/register' component={Signup} />
           <Route path='/' component={Main}/>
         </Switch>
-        <Redirect from='/' to='/map-view'/>
+        {/* <Redirect from='/' to='/map-view'/> */}
       </DataContext.Provider>
     </div>
   );

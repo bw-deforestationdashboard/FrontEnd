@@ -7,9 +7,10 @@ export default function Header () {
     return (
       <div>
         <Logo />
-        <Button text='Login' link='/login' />
-        <Button text='Sign Up' link='/register' />
-        <Link to="/login" onClick={() => localStorage.clear()}><button>Logout</button></Link>
+        {!localStorage.getItem('token') && <Button text='Login' link='/login' />}
+        {!localStorage.getItem('token') && <Button text='Sign Up' link='/register' />}
+        {localStorage.getItem('token') && <Link to="/" onClick={() => localStorage.clear()}>
+          <button>Logout</button></Link>}
       </div>
     );
 };

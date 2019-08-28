@@ -3,6 +3,8 @@ import { Menu } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Link, Route } from 'react-router-dom';
 
+import PrivateRoute from './PrivateRoute';
+
 import MapView from './MapView';
 import CountryView from './CountryView';
 import SavedPublic from './SavedPublic';
@@ -53,7 +55,7 @@ function TabNav(props) {
       </Menu>
       <Route path='/map-view' component={MapView} />
       <Route path='/country-view' component={CountryView} />
-      <Route path='/saved' component={SavedPublic} />
+      <PrivateRoute path='/saved' component={SavedPublic} />
     </>
 )
 }
