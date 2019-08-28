@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Logo from './Logo';
 import Footer from './Footer';
 
-const Signup = () => {
+const Signup = (props) => {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -22,7 +22,7 @@ const Signup = () => {
       .post("https://deforestation-back-end.herokuapp.com/api/register", user)
       .then(res => {
         console.log(res);
-        //props.history.push(/* '/login' SET UP THIS ROUTE! */) !!
+        props.history.push('/login')
       })
       .catch(err => console.log(err));
   };
