@@ -6,7 +6,7 @@ import axios from 'axios';
 import Logo from './Logo';
 import Footer from './Footer';
 
-const Login = (props) => {
+const Login = props => {
   const [login, setLogin] = useState({
     username: "",
     password: ""
