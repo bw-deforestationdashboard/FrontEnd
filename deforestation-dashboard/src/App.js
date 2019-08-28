@@ -7,6 +7,7 @@ import Welcome from './components/Welcome';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import MapView from './components/MapView';
 import CountryView from './components/CountryView';
 import SavedPublic from './components/SavedPublic';
 import { DataContext } from "./contexts/DataContext";
@@ -22,7 +23,8 @@ function App() {
       <DataContext.Provider value={data}>
         <Route exact path='/' component={Welcome}/>
         <Route path='/main' component={Home} />
-        <Route path='/main/country-list' component={CountryView} />
+        <Route path='/main/map-view' component={MapView} />
+        <Route path='/main/country-view' component={CountryView} />
         <Route path='/main/saved' component={SavedPublic} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Signup} />

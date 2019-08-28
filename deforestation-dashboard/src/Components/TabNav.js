@@ -14,18 +14,18 @@ function TabNav(props) {
     <Menu tabular>
       <Menu.Item 
         as={ Link }
-        to='/main'
-        name='/main'
-        active={activeItem === '/main'}
+        to='/main/map-view'
+        name='/main/map-view'
+        active={activeItem === '/main/map-view'}
         onClick={handleItemClick}
       >
         Map View
       </Menu.Item>
       <Menu.Item
         as={ Link }
-        to='/main/country-list'
-        name='/main/country-list'
-        active={activeItem === '/main/country-list'}
+        to='/main/country-view'
+        name='/main/country-view'
+        active={activeItem === '/main/country-view'}
         onClick={handleItemClick}
       >
         Country View
