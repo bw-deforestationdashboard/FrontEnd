@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Tab, Menu } from 'semantic-ui-react';
+import React, { useState, useEffect } from 'react';
+import { Menu } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Link, Route } from 'react-router-dom';
 
@@ -13,6 +13,12 @@ function TabNav(props) {
   const handleItemClick = (e, {name}) => {
     setActiveItem(name);
   }
+
+  useEffect(() => {
+    if (activeItem !== props.location.pathname) {
+      setActiveItem(props.location.pathname)
+    }
+  }, [props.location.pathname])
 
   return (
     <>
