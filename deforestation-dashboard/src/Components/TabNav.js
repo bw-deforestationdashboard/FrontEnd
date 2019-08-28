@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Tab, Menu } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+
+import MapView from './MapView';
+import CountryView from './CountryView';
+import SavedPublic from './SavedPublic';
 
 function TabNav(props) {
   const [activeItem, setActiveItem ] = useState(props.location.pathname);
@@ -11,35 +15,40 @@ function TabNav(props) {
   }
 
   return (
-    <Menu tabular>
-      <Menu.Item 
-        as={ Link }
-        to='/main/map-view'
-        name='/main/map-view'
-        active={activeItem === '/main/map-view'}
-        onClick={handleItemClick}
-      >
-        Map View
-      </Menu.Item>
-      <Menu.Item
-        as={ Link }
-        to='/main/country-view'
-        name='/main/country-view'
-        active={activeItem === '/main/country-view'}
-        onClick={handleItemClick}
-      >
-        Country View
-      </Menu.Item>
-      <Menu.Item
-        as={ Link }
-        to='/main/saved'
-        name='/main/saved'
-        active={activeItem === '/main/saved'}
-        onClick={handleItemClick}
-      >
-        Saved Charts
-      </Menu.Item>
-    </Menu>
+    <>
+      <Menu tabular>
+        <Menu.Item 
+          as={ Link }
+          to='/map-view'
+          name='/map-view'
+          active={activeItem === '/map-view'}
+          onClick={handleItemClick}
+        >
+          Map View
+        </Menu.Item>
+        <Menu.Item
+          as={ Link }
+          to='/country-view'
+          name='/country-view'
+          active={activeItem === '/country-view'}
+          onClick={handleItemClick}
+        >
+          Country View
+        </Menu.Item>
+        <Menu.Item
+          as={ Link }
+          to='/saved'
+          name='/saved'
+          active={activeItem === '/saved'}
+          onClick={handleItemClick}
+        >
+          Saved Charts
+        </Menu.Item>
+      </Menu>
+      <Route path='/map-view' component={MapView} />
+      <Route path='/country-view' component={CountryView} />
+      <Route path='/saved' component={SavedPublic} />
+    </>
 )
 }
 
