@@ -4,6 +4,7 @@ import axios from 'axios';
 // import * as Yup from "yup";
 
 import Logo from './Logo';
+import Footer from './Footer';
 
 const Login = props => {
   const [login, setLogin] = useState({
@@ -22,11 +23,16 @@ const Login = props => {
       .then(res => {
           console.log(res)
           localStorage.setItem('token', res.data.payload)
-          //need to push to saved items route
-          props.history.push('/main/saved')
+          props.history.push("/saved")
       })
-      .catch(err => console.log(err))
-  }
+      .catch(err => {
+        console.log(err)
+        alert("We're sorry. Please try again.")
+        setLogin({ 
+          username: "",
+          password: ""
+          })
+  })}  
 
   return (
     <div>
@@ -55,6 +61,7 @@ const Login = props => {
         <button>Login</button>
       </form>
       <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+      <Footer />
     </div>
   );
 };
