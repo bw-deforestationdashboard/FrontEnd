@@ -49,7 +49,7 @@ const Login = props => {
           />
         </label>
         <label>
-          Username:
+          Password:
           <input
             type="password"
             name="password"
