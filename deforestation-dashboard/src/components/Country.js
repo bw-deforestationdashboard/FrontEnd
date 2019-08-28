@@ -23,8 +23,12 @@ export default function Country(props) {
         },
         table: {
           minWidth: 650,
-          backgroundColor: yellow[400],
+          
         },
+
+        head: {
+          backgroundColor: yellow[400],
+        }
       
     }));
 
@@ -43,7 +47,7 @@ export default function Country(props) {
       <CardContent>
         <Paper className={classes.root}>
           <Table className={classes.table}>
-            <TableHead>
+            <TableHead className={classes.head}>
               <TableRow>
                 <TableCell>{props.name}</TableCell>
                 {yearArray.map((year) => {
