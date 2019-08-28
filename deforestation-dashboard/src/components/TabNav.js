@@ -22,7 +22,7 @@ function TabNav(props) {
 
   return (
     <>
-      <Menu tabular>
+      <Menu color='green' inverted tabular>
         <Menu.Item 
           as={ Link }
           to='/map-view'
