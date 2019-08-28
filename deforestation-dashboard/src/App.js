@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import sampleData from "./sampleData";
 
 import Main from './components/Main';
@@ -20,6 +20,7 @@ function App() {
           <Route path='/register' component={Signup} />
           <Route path='/' component={Main}/>
         </Switch>
+        <Redirect from='/' to='/map-view'/>
       </DataContext.Provider>
     </div>
   );
