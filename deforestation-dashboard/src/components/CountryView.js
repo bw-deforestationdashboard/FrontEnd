@@ -23,18 +23,21 @@ export default function CountryList () {
        return <p>Loading country data...</p>
     }
 
-    return ([
-        <header className='country-view'>Countries</header>,
-        countries.map( (ctry, index) => {
-            const yearArray = Object.entries(ctry).filter((array) => array[0] !== "Country" && array[0] !== "Code");
+    return (
+        <div className="content CountryView">
+           <h2>Countries</h2>
+            {countries.map( (ctry, index) => {
+                const yearArray = Object.entries(ctry).filter((array) => array[0] !== "Country" && array[0] !== "Code");
 
-            return (
-                <Country
-                name={ctry.Country}
-                yearArray={yearArray}
-                key={index}
-                />
-            )
-        })
-    ]);
+                return (
+                    <Country
+                    name={ctry.Country}
+                    yearArray={yearArray}
+                    key={index}
+                    />
+                )
+            })}
+        </div>
+        
+    );
 };
