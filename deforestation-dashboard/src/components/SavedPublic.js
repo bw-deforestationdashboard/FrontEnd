@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {Line} from 'react-chartjs-2';
+import sampleData from '../sampleData.js'
 
 export default function SavedPublic() {
+   const [myArray, setMyArray] = useState([])
+   const countryID = 2;
+   const currentArray = [];
+   currentArray.push(sampleData[0]["1990 [YR1990]"][countryID])
+   currentArray.push(sampleData[0]["2000 [YR2000]"][countryID])
+   currentArray.push(sampleData[0]["2016 [YR2016]"][countryID])
+   console.log(currentArray)
 
    const data = {
-      labels: ["1990", "1995", "2000", "2005", "2010", "2016"],
+      labels: ["1990", "2000", "2016"],
       datasets: [{
           label: 'Forest Coverage',
           fill: true,
@@ -24,7 +32,7 @@ export default function SavedPublic() {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: []
+          data: currentArray
       }]
       }
    
@@ -32,7 +40,7 @@ export default function SavedPublic() {
    return (
       <div>
         <h2>World Bank Data</h2>
-            <Line rdata={data} />
+            <Line data={data} />
       </div>
    )
 }
