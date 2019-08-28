@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import CountryView from './components/CountryView';
 import SavedPublic from './components/SavedPublic';
+import PrivateRoute from './components/PrivateRoute'
 import { DataContext } from "./contexts/DataContext";
 
 import "./App.css";
@@ -23,7 +24,7 @@ function App() {
         <Route exact path='/' component={Welcome}/>
         <Route path='/main' component={Home} />
         <Route path='/main/country-list' component={CountryView} />
-        <Route path='/main/saved' component={SavedPublic} />
+        <PrivateRoute path='/main/saved' component={SavedPublic} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Signup} />
       </DataContext.Provider>
