@@ -5,13 +5,13 @@ import { DataContext } from '../contexts/DataContext'
 
 export default function CountryList () {
     const data = useContext(DataContext)
-    console.log(data[0])
-
+    console.log(data);
     const [countries, setCountries] = useState([]);
-    // console.log(CountryData)
     let obj = data[0].Country;
     let countriesArr = Object.values(obj);//made object into an array of values
-    
+    console.log(countriesArr)
+    let cArr = [];
+
     // useEffect(() => {
     //     axios.get('').then((res)=> {
     //         setCountries(res.data);

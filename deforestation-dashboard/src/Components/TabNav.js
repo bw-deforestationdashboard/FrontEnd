@@ -1,19 +1,7 @@
 import React, { useState } from 'react';
-import { Tab, Menu } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Link } from 'react-router-dom';
-
-import SavedPublic from './SavedPublic';
-import CountryView from './CountryView';
-import MapView from './MapView';
-
-// const panes = [
-//     { menuItem: 'Map View', render: () => <Tab.Pane></Tab.Pane> },
-//     { menuItem: 'Country View', render: () => <Tab.Pane><CountryList /></Tab.Pane> },
-//     { menuItem: 'Saved Charts', render: () => <Tab.Pane><SavedPublic /></Tab.Pane> },
-// ]
-  
-// const TabNav = () => <Tab panes={panes} />
 
 function TabNav() {
   const [activeItem, setActiveItem ] = useState('map');
