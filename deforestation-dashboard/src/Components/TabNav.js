@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import { Tab, Menu } from 'semantic-ui-react';
+import React, { useState, useEffect } from 'react';
+import { Menu } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+
+import MapView from './MapView';
+import CountryView from './CountryView';
+import SavedPublic from './SavedPublic';
 
 function TabNav(props) {
   const [activeItem, setActiveItem ] = useState(props.location.pathname);
@@ -10,36 +14,47 @@ function TabNav(props) {
     setActiveItem(name);
   }
 
+  useEffect(() => {
+    if (activeItem !== props.location.pathname) {
+      setActiveItem(props.location.pathname)
+    }
+  }, [props.location.pathname])
+
   return (
-    <Menu tabular>
-      <Menu.Item 
-        as={ Link }
-        to='/main'
-        name='/main'
-        active={activeItem === '/main'}
-        onClick={handleItemClick}
-      >
-        Map View
-      </Menu.Item>
-      <Menu.Item
-        as={ Link }
-        to='/main/country-list'
-        name='/main/country-list'
-        active={activeItem === '/main/country-list'}
-        onClick={handleItemClick}
-      >
-        Country View
-      </Menu.Item>
-      <Menu.Item
-        as={ Link }
-        to='/main/saved'
-        name='/main/saved'
-        active={activeItem === '/main/saved'}
-        onClick={handleItemClick}
-      >
-        Saved Charts
-      </Menu.Item>
-    </Menu>
+    <>
+      <Menu tabular>
+        <Menu.Item 
+          as={ Link }
+          to='/map-view'
+          name='/map-view'
+          active={activeItem === '/map-view'}
+          onClick={handleItemClick}
+        >
+          Map View
+        </Menu.Item>
+        <Menu.Item
+          as={ Link }
+          to='/country-view'
+          name='/country-view'
+          active={activeItem === '/country-view'}
+          onClick={handleItemClick}
+        >
+          Country View
+        </Menu.Item>
+        <Menu.Item
+          as={ Link }
+          to='/saved'
+          name='/saved'
+          active={activeItem === '/saved'}
+          onClick={handleItemClick}
+        >
+          Saved Charts
+        </Menu.Item>
+      </Menu>
+      <Route path='/map-view' component={MapView} />
+      <Route path='/country-view' component={CountryView} />
+      <Route path='/saved' component={SavedPublic} />
+    </>
 )
 }
 
