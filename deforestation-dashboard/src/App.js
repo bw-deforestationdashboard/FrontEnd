@@ -13,11 +13,22 @@ import "./App.css";
 
 function App() {
   const [data] = useState(sampleData);
+  const [saved, setSaved] = useState([])
+
+  const removeCountry = remove => {
+    console.log('i dont want', remove);
+    
+    setSaved(saved.filter(nope => {
+      console.log(nope.id)
+      return nope.id !== remove
+    }))
+    }
+  
 
   return (
     <div className="App">
       <DataContext.Provider value={data}>
-        <SavedContext.Provider>
+        <SavedContext.Provider value={{ saved, removeCountry }}>
         <Switch>
           <Route path='/login' component={Login} />
           <Route path='/register' component={Signup} />
