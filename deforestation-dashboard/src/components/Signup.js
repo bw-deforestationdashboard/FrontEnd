@@ -24,7 +24,14 @@ const Signup = (props) => {
         console.log(res);
         props.history.push('/login')
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err)
+        alert("We're sorry. Please try again.")
+        setUser({ 
+          username: "",
+          password: "",
+          email: ""})
+      });
   };
 
   return (
