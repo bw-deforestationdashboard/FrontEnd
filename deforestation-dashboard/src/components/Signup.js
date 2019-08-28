@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
 
@@ -18,8 +17,8 @@ const Signup = () => {
 
   const submitHandler = e => {
     e.preventDefault();
-    axiosWithAuth
-      .post("", user)
+    axiosWithAuth()
+      .post("https://deforestation-back-end.herokuapp.com/api/register", user)
       .then(res => {
         console.log(res);
         //props.history.push(/* '/login' SET UP THIS ROUTE! */) !!

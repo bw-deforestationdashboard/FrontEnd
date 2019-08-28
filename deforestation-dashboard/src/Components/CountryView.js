@@ -4,14 +4,12 @@ import Country from './Country';
 import { DataContext } from '../contexts/DataContext'
 
 export default function CountryList () {
-    const data = useContext(DataContext)
-    console.log(data);
-    const [countries, setCountries] = useState([]);
-    let obj = data[0].Country;
-    let countriesArr = Object.values(obj);//made object into an array of values
-    console.log(countriesArr)
-    let cArr = [];
+    const data = useContext(DataContext)//state management
 
+    const [countries, setCountries] = useState([]);//set state
+    let obj = data[0].Country;//access countries
+    let countriesArr = Object.values(obj);//made object into an array of values
+      
     // useEffect(() => {
     //     axios.get('').then((res)=> {
     //         setCountries(res.data);
@@ -29,10 +27,11 @@ export default function CountryList () {
 
     return ([
         <header>Countries</header>,
-        countries.map( ctry => {
+        countries.map( (ctry, index) => {
             return (
                 <Country
                 name={ctry}
+                key={index}
                 />
             )
         })
