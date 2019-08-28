@@ -7,8 +7,6 @@ export default function CountryList () {
     const data = useContext(DataContext)//state management
 
     const [countries, setCountries] = useState([]);//set state
-    let obj = data[0].Country;//access countries
-    let countriesArr = Object.values(obj);//made object into an array of values
       
     // useEffect(() => {
     //     axios.get('').then((res)=> {
@@ -18,7 +16,7 @@ export default function CountryList () {
     // }, [])
 
     useEffect(() => {
-        setCountries(countriesArr)
+        setCountries(data)
     }, [])
 
     if(!countries){
@@ -28,9 +26,12 @@ export default function CountryList () {
     return ([
         <header>Countries</header>,
         countries.map( (ctry, index) => {
+            const yearArray = Object.entries(ctry).filter((array) => array[0] !== "Country" && array[0] !== "Code");
+
             return (
                 <Country
-                name={ctry}
+                name={ctry.Country}
+                yearArray={yearArray}
                 key={index}
                 />
             )
