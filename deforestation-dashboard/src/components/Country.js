@@ -51,7 +51,7 @@ export default function Country(props) {
               <TableRow>
                 <TableCell>{props.name}</TableCell>
                 {yearArray.map((year) => {
-                  return <TableCell align="right">{year[0]}</TableCell>
+                  return <TableCell align="right">{year[0]} (%)</TableCell>
                 })}
               </TableRow>
             </TableHead>
