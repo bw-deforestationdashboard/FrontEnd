@@ -21,7 +21,12 @@ export default function CountryList () {
     }, [])
 
     if(!countries){
-       return <p>Loading country data...</p>
+       return (
+        <div className="loading">
+            <h2>Loading country data...</h2>
+            <p>Special thanks to <a href="https://github.com/drolon1126">Daniel Rolon</a> for saving our backend</p>
+        </div>
+       )
     }
 
     const toArrayOfArrays = (array) => {
