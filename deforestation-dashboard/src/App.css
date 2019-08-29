@@ -14,6 +14,7 @@
   border: 0;
   box-sizing: border-box;
   color: #333333;
+  outline: none;
 }
 
 /* --------------------- Font sizing ---------------- */
@@ -40,6 +41,14 @@ button {
 
 select {
   font-size: 1.8rem;
+}
+
+label {
+  font-size: 1.8rem;
+}
+
+input {
+  font-size: 1.4rem;
 }
 
 /* ----------------- Sticky Footer ------------------- */
@@ -143,4 +152,11 @@ label {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+select {
+  width: 100px;
+  padding: 7px;
+  border: 1px solid #999999;
+  border-radius: 3px;
 }
