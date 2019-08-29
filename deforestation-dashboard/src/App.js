@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import sampleData from "./sampleData";
-
+import Chart from './components/Chart';
 import Main from './components/Main';
 import Login from './components/Login';
 import Signup from './components/Signup';
