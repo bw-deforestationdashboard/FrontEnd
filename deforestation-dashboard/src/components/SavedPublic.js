@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Button from "./Button";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import { getThemeProps } from "@material-ui/styles";
 
 const SavedPublic = (props) => {
   console.log(props)
@@ -32,11 +30,11 @@ const SavedPublic = (props) => {
       .delete(`https://deforestation-back-end.herokuapp.com/api/users/${activeUser.id}`)
       .then(res => {
         console.log("DELETE request completed successfully", res)
-        alert("Bye!")
+        alert("We're sorry to se you go!")
         localStorage.clear()
         history.push('/')
       })
-      .catch(err => console.log("DELETE error", err.response));
+      .catch(err => console.log("DELETE error", err.repsonse));
   }
 
   return (
@@ -45,7 +43,7 @@ const SavedPublic = (props) => {
       <button className="btn" onClick={() => setEditing(true)}>
         I want to change my username!
       </button>
-      <button className="btn" onClick={(e) => deleteUser(e, activeUser)}>
+      <button className="btn header-login" onClick={(e) => deleteUser(e, activeUser)}>
         I want to delete my account!
       </button>
 
@@ -59,7 +57,7 @@ const SavedPublic = (props) => {
             onChange={handleChange}
           ></input>
           <button className="btn" >Save</button>
-          <button className="btn" 
+          <button className="btn header-login" 
             onClick={() => {
               setEditing(false);
             }}
