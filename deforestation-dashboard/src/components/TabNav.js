@@ -10,6 +10,7 @@ import CountryView from './CountryView';
 import SavedPublic from './SavedPublic';
 
 function TabNav(props) {
+  
   const [activeItem, setActiveItem ] = useState(props.location.pathname);
 
   const handleItemClick = (e, {name}) => {
@@ -58,7 +59,7 @@ function TabNav(props) {
       </Menu>
       <Route path='/map-view' component={MapView} />
       <Route path='/country-view' component={CountryView} />
-      <PrivateRoute path='/saved' component={SavedPublic} />
+      <PrivateRoute path='/saved' activeUser={props.activeUser} setActiveUser={props.setActiveUser} component={SavedPublic}/>
     </>
 )
 }

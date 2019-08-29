@@ -13,14 +13,19 @@ import "./App.css";
 function App() {
   const [data] = useState(sampleData);
 
-  const [activeUser, setActiveUser] = useState("" /* amend based on whether login/POST response gives full user object */)
+  const [activeUser, setActiveUser] = useState({
+    email: "",
+    id: "",
+  password: "",
+username: ""
+  })
 
   return (
     <div className="App">
       <DataContext.Provider value={data}>
         <SavedContext.Provider>
         <Switch>
-          <Route path='/login' render={(props) => <Login {...props} setActiveUser={setActiveUser} />} />
+          <Route path='/login' render={(props) => <Login {...props} activeUser={activeUser} setActiveUser={setActiveUser} />} />
           {/* <Route path='/login' component={Login} /> */}
           <Route path='/register' component={Signup} />
           <Route path='/' render={(props) => <Main {...props} setActiveUser={setActiveUser} activeUser={activeUser} />}/>
