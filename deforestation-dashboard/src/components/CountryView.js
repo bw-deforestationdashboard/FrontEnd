@@ -9,10 +9,12 @@ export default function CountryList () {
     const [countries, setCountries] = useState([]);//set state
       
     // useEffect(() => {
-    //     axios.get('').then((res)=> {
+    //     axios.get('')
+    //      .then((res)=> {
     //         setCountries(res.data);
     //         console.log(res)
-    //     })
+    //      })
+    //      .catch(err => console.log(err))
     // }, [])
 
     useEffect(() => {
