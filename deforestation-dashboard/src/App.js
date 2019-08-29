@@ -23,7 +23,7 @@ function App() {
           <Route path='/login' render={(props) => <Login {...props} setActiveUser={setActiveUser} />} />
           {/* <Route path='/login' component={Login} /> */}
           <Route path='/register' component={Signup} />
-          <Route path='/' component={Main}/>
+          <Route path='/' render={(props) => <Main {...props} setActiveUser={setActiveUser} activeUser={activeUser} />}/>
         </Switch>
         <Redirect from='/' to='/map-view'/>
         </SavedContext.Provider>
