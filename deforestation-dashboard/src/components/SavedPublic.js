@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import Chart from './Chart'
+import SavedCharts from "./SavedCharts";
 
-const SavedPublic = (props) => {
-  console.log(props)
+const SavedPublic = props => {
+  console.log(props);
   const [editing, setEditing] = useState(false);
-  const {setActiveUser, activeUser, history} = props
+  const { setActiveUser, activeUser, history } = props;
   const handleChange = e => {
     setActiveUser({ ...activeUser, [e.target.name]: e.target.value });
   };
@@ -28,27 +28,33 @@ const SavedPublic = (props) => {
     e.stopPropagation();
     e.preventDefault();
     axiosWithAuth()
-      .delete(`https://deforestation-back-end.herokuapp.com/api/users/${activeUser.id}`)
+      .delete(
+        `https://deforestation-back-end.herokuapp.com/api/users/${activeUser.id}`
+      )
       .then(res => {
-        console.log("DELETE request completed successfully", res)
-        alert("We're sorry to se you go!")
-        localStorage.clear()
-        history.push('/')
+        console.log("DELETE request completed successfully", res);
+        alert("We're sorry to se you go!");
+        localStorage.clear();
+        history.push("/");
       })
       .catch(err => console.log("DELETE error", err.repsonse));
-  }
+  };
 
   return (
     <div className="content CountryView">
       <h2>Welcome!</h2>
+
+      <SavedCharts />
+
       <button className="btn" onClick={() => setEditing(true)}>
         I want to change my username!
       </button>
-      <button className="btn header-login" onClick={(e) => deleteUser(e, activeUser)}>
+      <button
+        className="btn header-login"
+        onClick={e => deleteUser(e, activeUser)}
+      >
         I want to delete my account!
       </button>
-
-      <Chart legendPosition="bottom"/>
 
       {editing && (
         <form className="Login" onSubmit={handleSubmit}>
@@ -59,8 +65,9 @@ const SavedPublic = (props) => {
             value={activeUser.username}
             onChange={handleChange}
           ></input>
-          <button className="btn" >Save</button>
-          <button className="btn header-login" 
+          <button className="btn">Save</button>
+          <button
+            className="btn header-login"
             onClick={() => {
               setEditing(false);
             }}

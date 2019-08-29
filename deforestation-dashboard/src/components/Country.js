@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useContext} from "react";
+import {SavedContext} from '../contexts/SavedContext'
+
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import { makeStyles } from "@material-ui/core/styles";
@@ -54,6 +56,8 @@ export default function Country(props) {
     setExpanded(!expanded);
   }
 
+  const {addItem} = useContext(SavedContext)
+
   return (
     <Card>
       <CardContent>
@@ -102,7 +106,8 @@ export default function Country(props) {
           </Table>
         </Paper>
         <CardActions>
-          <Button size="medium" style={{fontSize: "1.3rem"}}>
+          <Button size="medium" style={{fontSize: "1.3rem"}}
+            onClick={()=>addItem(props["code"])}>
             Save to My Charts
           </Button>
           <Button
