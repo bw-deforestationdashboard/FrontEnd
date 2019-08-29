@@ -26,7 +26,6 @@ function App() {
         <Redirect from='/' to='/map-view'/>
         </SavedContext.Provider>
       </DataContext.Provider>
-      < Chart legendPosition="bottom"/>
     </div>
   );
 }
