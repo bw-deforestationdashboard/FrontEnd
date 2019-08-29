@@ -40,7 +40,7 @@ const Signup = (props) => {
         <Logo />
         <form onSubmit={submitHandler}>
           <label>
-            Username:
+            Username: 
             <input
               type="text"
               name="username"
@@ -50,7 +50,7 @@ const Signup = (props) => {
             />
           </label>
           <label>
-            Username:
+            Password: 
             <input
               type="password"
               name="password"
@@ -60,7 +60,7 @@ const Signup = (props) => {
             />
           </label>
           <label>
-            Username:
+            Email: 
             <input
               type="email"
               name="email"
@@ -69,7 +69,7 @@ const Signup = (props) => {
               onChange={changeHandler}
             />
           </label>
-          <button>Register</button>
+          <button className="btn signup-btn">Register</button>
         </form>
         <p>
           Already have an account? <Link to="/login">Login here!</Link>
