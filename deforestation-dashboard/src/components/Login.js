@@ -6,7 +6,7 @@ import axios from 'axios';
 import Logo from './Logo';
 import Footer from './Footer';
 
-const Login = ({ setActiveUser, history }) => {
+const Login = ({ activeUser, setActiveUser, history }) => {
  
   const [login, setLogin] = useState({
     username: "",
@@ -22,7 +22,9 @@ const Login = ({ setActiveUser, history }) => {
       axios
       .post('https://deforestation-back-end.herokuapp.com/api/login', login)
       .then(res => {
+          console.log("Login. POST request completed successfully", res)
           setActiveUser(res.data.user)
+          console.log(activeUser)
           localStorage.setItem('token', res.data.token)
           history.push("/saved")
       })
