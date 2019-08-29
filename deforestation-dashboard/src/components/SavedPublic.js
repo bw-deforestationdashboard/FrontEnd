@@ -3,9 +3,10 @@ import Button from "./Button";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { getThemeProps } from "@material-ui/styles";
 
-const SavedPublic = ({setActiveUser, activeUser, history}) => {
+const SavedPublic = (props) => {
+  console.log(props)
   const [editing, setEditing] = useState(false);
-  
+  const {setActiveUser, activeUser, history} = props
   const handleChange = e => {
     setActiveUser({ ...activeUser, [e.target.name]: e.target.value });
   };
@@ -18,7 +19,7 @@ const SavedPublic = ({setActiveUser, activeUser, history}) => {
         activeUser
       )
       .then(res => {
-        console.log(res);
+        console.log("PUT request completed successfully", res);
         setEditing(false);
       })
       .catch(err => console.log("PUT error", err.response));
@@ -30,6 +31,7 @@ const SavedPublic = ({setActiveUser, activeUser, history}) => {
     axiosWithAuth()
       .delete(`https://deforestation-back-end.herokuapp.com/api/users/${activeUser.id}`)
       .then(res => {
+        console.log("DELETE request completed successfully", res)
         alert("Bye!")
         localStorage.clear()
         history.push('/')
@@ -38,17 +40,17 @@ const SavedPublic = ({setActiveUser, activeUser, history}) => {
   }
 
   return (
-    <div>
-      <p>Welcome! </p>
-      <button onClick={() => setEditing(true)}>
+    <div className="content CountryView">
+      <h2>Welcome!</h2>
+      <button className="btn" onClick={() => setEditing(true)}>
         I want to change my username!
       </button>
-      <button onClick={(e) => deleteUser(e, activeUser)}>
+      <button className="btn" onClick={(e) => deleteUser(e, activeUser)}>
         I want to delete my account!
       </button>
 
       {editing && (
-        <form onSubmit={handleSubmit}>
+        <form className="Login" onSubmit={handleSubmit}>
           <input
             type="text"
             name="username"
@@ -56,8 +58,8 @@ const SavedPublic = ({setActiveUser, activeUser, history}) => {
             value={activeUser.username}
             onChange={handleChange}
           ></input>
-          <button>Save</button>
-          <button
+          <button className="btn" >Save</button>
+          <button className="btn" 
             onClick={() => {
               setEditing(false);
             }}
