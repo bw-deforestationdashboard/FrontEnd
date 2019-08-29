@@ -6,7 +6,8 @@ import axios from 'axios';
 import Logo from './Logo';
 import Footer from './Footer';
 
-const Login = props => {
+const Login = ({ setActiveUser, history }) => {
+ 
   const [login, setLogin] = useState({
     username: "",
     password: ""
@@ -21,9 +22,9 @@ const Login = props => {
       axios
       .post('https://deforestation-back-end.herokuapp.com/api/login', login)
       .then(res => {
-          console.log("on login:", res)
-          localStorage.setItem('token', res.data.payload)
-          props.history.push("/saved")
+          setActiveUser(res.data /* add userID! */)
+          localStorage.setItem('token', res.data.token)
+          history.push("/saved")
       })
       .catch(err => {
         console.log(err)
