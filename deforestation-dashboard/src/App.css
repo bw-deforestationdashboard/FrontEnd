@@ -87,7 +87,8 @@ select {
 
 .img-map {
   max-width: 80%;
-  max-height: 100vh;
+  max-height: 90vh;
+  margin-bottom: 15px;
 }
 
 /* --------------------- Buttons --------------------- */
