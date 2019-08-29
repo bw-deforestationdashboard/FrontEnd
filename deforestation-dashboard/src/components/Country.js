@@ -8,7 +8,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import yellow from "@material-ui/core/colors/yellow";
+// import yellow from "@material-ui/core/colors/yellow";
 
 export default function Country(props) {
   const { yearArray } = props;
@@ -17,7 +17,8 @@ export default function Country(props) {
       maxWidth: 345
     },
     root: {
-      width: "100%",
+      width: "80%",
+      margin: "0 auto",
       marginTop: theme.spacing(3),
       overflowX: "auto"
     },
@@ -26,7 +27,7 @@ export default function Country(props) {
     },
 
     head: {
-      backgroundColor: '#f5e132',
+      backgroundColor: '#f5d132',
     }
   }));
 
@@ -45,7 +46,7 @@ export default function Country(props) {
           <Table className={classes.table}>
             <TableHead className={classes.head}>
               <TableRow>
-                <TableCell style={{ fontSize: "1.8rem" }}>
+                <TableCell style={{ fontSize: "1.8rem", fontWeight: "bold", lineHeight: "1" }}>
                   {props.name}
                 </TableCell>
                 {yearArray.map(year => {
@@ -63,7 +64,7 @@ export default function Country(props) {
                   <TableCell
                     component="th"
                     scope="row"
-                    style={{ fontSize: "1.5rem", minWidth: "200px" }}
+                    style={{ fontSize: "1.5rem", minWidth: "220px" }}
                   >
                     {row.name}
                   </TableCell>

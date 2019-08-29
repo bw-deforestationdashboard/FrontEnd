@@ -96,8 +96,7 @@ select {
 /* ----------------- Semantic Ui Menu Tabs----------- */
 
 .ui.inverted.green.menu, .ui.inverted.menu .green.active.item {
-  background-color: #6D7A48;
-  color: #f5e132
+  background-color: #859752;
 }
 
 .ui.green.menu .active.item {
