@@ -10,7 +10,7 @@ export default function Main(props) {
       <div className='Main'>
          <Header />
          <TabNav {...props} />
-         <Footer />
+         {/* <Footer /> */}
       </div>
    )
 }

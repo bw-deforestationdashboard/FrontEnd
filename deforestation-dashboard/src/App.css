@@ -59,7 +59,8 @@ input {
 
 /* ----------------- Sticky Footer ------------------- */
 
-.Login, .Signup, .Main {
+
+.Login, .Signup, .Main, .SavedPublic {
   flex: 1 0 auto;
 }
 
@@ -77,14 +78,10 @@ footer {
   align-items: center;
 }
 
-.MapView, .CountryView {
+.content {
   text-align: center;
   background-color: #f0f0f0;
   padding-top: 20px;
-}
-
-select {
-  margin-bottom: 20px;
 }
 
 .img-map {
@@ -102,11 +99,16 @@ select {
   width: 100px;
   padding: 7px;
   border: 1px solid #999999;
+  margin-bottom: 20px;
   border-radius: 3px;
 }
 
 .MuiCardContent-root {
   background-color: #f0f0f0;
+}
+
+.loading {
+  text-align: center;
 }
 
 /* --------------------- Buttons --------------------- */
