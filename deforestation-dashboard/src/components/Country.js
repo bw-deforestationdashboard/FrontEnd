@@ -44,7 +44,7 @@ export default function Country(props) {
     return { name };
   };
 
-  const rows = [createData("Forest cover as % of land surface")];
+  const rows = [createData("Forest cover as sq km of land surface")];
 
   const classes = useStyles();
 
@@ -73,7 +73,7 @@ export default function Country(props) {
                 {yearArray.map(year => {
                   return (
                     <TableCell align="right" style={{ fontSize: "1.6rem" }}>
-                      {year[0]} (SqKm)
+                      {year[0]}
                     </TableCell>
                   );
                 })}
@@ -87,12 +87,12 @@ export default function Country(props) {
                     scope="row"
                     style={{ fontSize: "1.5rem", minWidth: "220px" }}
                   >
-                    {row.name}
+                    Forest cover as km<sup>2</sup> of land surface
                   </TableCell>
                   {yearArray.map(year => {
                     return (
                       <TableCell align="right" style={{ fontSize: "1.3rem" }}>
-                        {Math.round(year[1])}
+                        {Math.round(year[1])} km<sup>2</sup>
                       </TableCell>
                     );
                   })}
