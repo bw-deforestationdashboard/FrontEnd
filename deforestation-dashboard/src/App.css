@@ -94,6 +94,10 @@ select {
   margin-bottom: 15px;
 }
 
+.img-chart {
+  width: 100%;
+}
+
 /* --------------------- Buttons --------------------- */
 
 .btn {
