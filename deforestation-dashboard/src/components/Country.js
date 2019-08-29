@@ -110,12 +110,12 @@ export default function Country(props) {
             aria-expanded={expanded}
             aria-label="show more"
           >
-            Click to display chart
+            {!expanded ? "Click to display chart" : "Click to close"}
           </Button>
         </CardActions>
-        <Collapse>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <p>testing</p>
+            <img className="img-chart" src={require(`../assets/charts/${props.code}.png`)} />
           </CardContent>
         </Collapse>
       </CardContent>

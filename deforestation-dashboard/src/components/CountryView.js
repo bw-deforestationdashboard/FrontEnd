@@ -31,6 +31,7 @@ export default function CountryList () {
 
                 return (
                     <Country
+                    code={ctry.Code}
                     name={ctry.Country}
                     yearArray={yearArray}
                     key={index}
