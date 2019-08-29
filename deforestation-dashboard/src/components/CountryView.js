@@ -1,24 +1,23 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Country from './Country';
-import { DataContext } from '../contexts/DataContext'
 
 export default function CountryList () {
-    const data = useContext(DataContext)//state management
-
-    const [countries, setCountries] = useState([]);//set state
+    const [countries, setCountries] = useState(null);//set state
       
-    // useEffect(() => {
-    //     axios.get('')
-    //      .then((res)=> {
-    //         setCountries(res.data);
-    //         console.log(res)
-    //      })
-    //      .catch(err => console.log(err))
-    // }, [])
-
     useEffect(() => {
-        setCountries(data)
+        axios.get('https://countries-api-test.herokuapp.com/api/countries')
+         .then((res)=> {
+             const filteredData = res.data.filter(country => {
+                return country.Code !== "HKG" && 
+                        country.Code !== "MAC" && 
+                        country.Code !== "MCO" && 
+                        country.Code !== "SDN"
+            })
+            setCountries(filteredData);
+            console.log(filteredData)
+         })
+         .catch(err => console.log(err))
     }, [])
 
     if(!countries){
