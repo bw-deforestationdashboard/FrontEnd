@@ -52,7 +52,7 @@ export default function Country(props) {
                 {yearArray.map(year => {
                   return (
                     <TableCell align="right" style={{ fontSize: "1.6rem" }}>
-                      {year[0]} (%)
+                      {year[0]} (SqKm)
                     </TableCell>
                   );
                 })}
