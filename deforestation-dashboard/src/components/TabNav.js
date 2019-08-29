@@ -33,7 +33,7 @@ function TabNav(props) {
           active={activeItem === '/map-view'}
           onClick={handleItemClick}
         >
-          Maps and Charts
+          Maps
         </Menu.Item>
         <Menu.Item
           className="menu-tab"
