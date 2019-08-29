@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link } from "react-router-dom";
+import axios from "axios";
 // import * as Yup from "yup";
 
-import Logo from './Logo';
-import Footer from './Footer';
+import Logo from "./Logo";
+import Footer from "./Footer";
 
 const Login = ({ activeUser, setActiveUser, history }) => {
  
@@ -14,13 +14,13 @@ const Login = ({ activeUser, setActiveUser, history }) => {
   });
 
   const changeHandler = e => {
-      setLogin({...login, [e.target.name]: e.target.value})
-  }
+    setLogin({ ...login, [e.target.name]: e.target.value });
+  };
 
   const submitHandler = e => {
-      e.preventDefault();
-      axios
-      .post('https://deforestation-back-end.herokuapp.com/api/login', login)
+    e.preventDefault();
+    axios
+      .post("https://deforestation-back-end.herokuapp.com/api/login", login)
       .then(res => {
           console.log("Login. POST request completed successfully", res)
           setActiveUser(res.data.user)
@@ -29,13 +29,14 @@ const Login = ({ activeUser, setActiveUser, history }) => {
           history.push("/saved")
       })
       .catch(err => {
-        console.log(err)
-        alert("We're sorry. Please try again.")
-        setLogin({ 
+        console.log(err);
+        alert("We're sorry. Please try again.");
+        setLogin({
           username: "",
           password: ""
-          })
-  })}  
+        });
+      });
+  };
 
   return (
     <>
@@ -64,13 +65,13 @@ const Login = ({ activeUser, setActiveUser, history }) => {
           </label>
           <button className ="btn login-btn">Login</button>
         </form>
-        <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+        <p>
+          Don't have an account? <Link to="/register">Sign up here!</Link>
+        </p>
       </div>
       <Footer />
     </>
   );
 };
-
-
 
 export default Login;
