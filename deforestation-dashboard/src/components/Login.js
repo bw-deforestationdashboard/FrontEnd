@@ -22,7 +22,7 @@ const Login = ({ setActiveUser, history }) => {
       axios
       .post('https://deforestation-back-end.herokuapp.com/api/login', login)
       .then(res => {
-          setActiveUser(res.data /* add userID! */)
+          setActiveUser(res.data.user)
           localStorage.setItem('token', res.data.token)
           history.push("/saved")
       })
