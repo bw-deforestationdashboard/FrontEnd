@@ -102,3 +102,45 @@ select {
 .ui.green.menu .active.item {
   border-color: #6D7A48!important;
 }
+
+/* ----------------- Login and Signup pages----------- */
+
+.Login, .Signup {
+  padding: 40px 0 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Login *, .Signup * {
+  margin-bottom: 10px;
+}
+
+.Login form, .Signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Login .logo, .Signup .logo {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 300px;
+  border: 1px solid #999999;
+  padding: 14px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+label {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
