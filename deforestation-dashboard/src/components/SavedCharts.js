@@ -11,7 +11,7 @@ const SavedCharts = props => {
   const { saved, removeItem } = useContext(SavedContext);
 
   return (
-    <div className="content CountryView">
+    <div className="content SavedCharts">
       {saved.map(i => {
         return(<Card>
             <Paper>
