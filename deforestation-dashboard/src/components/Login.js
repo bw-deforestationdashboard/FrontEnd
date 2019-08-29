@@ -21,7 +21,7 @@ const Login = props => {
       axios
       .post('https://deforestation-back-end.herokuapp.com/api/login', login)
       .then(res => {
-          console.log(res)
+          console.log("on login:", res)
           localStorage.setItem('token', res.data.payload)
           props.history.push("/saved")
       })
@@ -35,34 +35,36 @@ const Login = props => {
   })}  
 
   return (
-    <div>
-      <Logo />
-      <form onSubmit={submitHandler}>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={login.username}
-            onChange={changeHandler}
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={login.password}
-            onChange={changeHandler}
-          />
-        </label>
-        <button>Login</button>
-      </form>
-      <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+    <>
+      <div className="Login">
+        <Logo />
+        <form onSubmit={submitHandler}>
+          <label>
+            Username:
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={login.username}
+              onChange={changeHandler}
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={login.password}
+              onChange={changeHandler}
+            />
+          </label>
+          <button>Login</button>
+        </form>
+        <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

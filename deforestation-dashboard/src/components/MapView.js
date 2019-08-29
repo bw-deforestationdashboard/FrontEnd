@@ -20,7 +20,7 @@ export default function MapView () {
     }
 
     return (
-        <div>
+        <div className="content MapView">
             <h2>Map</h2>
             <select onChange={handleYear}>
                 {yearArray.map(yearItem => {

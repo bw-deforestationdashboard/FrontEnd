@@ -1,6 +1,11 @@
-/* .App {
-  text-align: center;
-}*/
+
+/* ------------------ Global Styles ----------------- */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 * {
   margin: 0;
@@ -8,7 +13,48 @@
   border: 0;
   box-sizing: border-box;
 }
-/* 
+
+/* --------------------- Font sizing ---------------- */
+
 html {
   font-size: 62.5%;
-} */
+}
+
+.menu-tab {
+  font-size: 1.4rem;
+}
+
+.logo {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+button {
+  font-size: 1.8rem;
+}
+
+select {
+  font-size: 1.8rem;
+}
+
+/* ----------------- Sticky Footer ------------------- */
+
+.Login, .Signup, .Main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+

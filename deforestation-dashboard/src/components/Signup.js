@@ -35,46 +35,48 @@ const Signup = (props) => {
   };
 
   return (
-    <div>
-      <Logo />
-      <form onSubmit={submitHandler}>
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={user.username}
-            onChange={changeHandler}
-          />
-        </label>
-        <label>
-          Username:
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={user.password}
-            onChange={changeHandler}
-          />
-        </label>
-        <label>
-          Username:
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={user.email}
-            onChange={changeHandler}
-          />
-        </label>
-        <button>Register</button>
-      </form>
-      <p>
-        Already have an account? <Link to="/login">Login here!</Link>
-      </p>
+    <>
+      <div className="Signup">
+        <Logo />
+        <form onSubmit={submitHandler}>
+          <label>
+            Username:
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={user.username}
+              onChange={changeHandler}
+            />
+          </label>
+          <label>
+            Username:
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={user.password}
+              onChange={changeHandler}
+            />
+          </label>
+          <label>
+            Username:
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={user.email}
+              onChange={changeHandler}
+            />
+          </label>
+          <button>Register</button>
+        </form>
+        <p>
+          Already have an account? <Link to="/login">Login here!</Link>
+        </p>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

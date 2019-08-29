@@ -5,12 +5,14 @@ import Button from './Button';
 
 export default function Header () {
     return (
-      <div>
+      <div className="Header">
         <Logo />
-        {!localStorage.getItem('token') && <Button text='Login' link='/login' />}
-        {!localStorage.getItem('token') && <Button text='Sign Up' link='/register' />}
-        {localStorage.getItem('token') && <Link to="/" onClick={() => localStorage.clear()}>
+        <div>
+          {!localStorage.getItem('token') && <Button text='Login' link='/login' />}
+          {!localStorage.getItem('token') && <Button text='Sign Up' link='/register' />}
+          {localStorage.getItem('token') && <Link to="/" onClick={() => localStorage.clear()}>
           <button>Logout</button></Link>}
+        </div>
       </div>
     );
 };

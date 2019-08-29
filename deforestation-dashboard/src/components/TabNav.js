@@ -26,6 +26,7 @@ function TabNav(props) {
     <>
       <Menu color='green' inverted tabular>
         <Menu.Item 
+          className="menu-tab"
           as={ Link }
           to='/map-view'
           name='/map-view'
@@ -35,6 +36,7 @@ function TabNav(props) {
           Map View
         </Menu.Item>
         <Menu.Item
+          className="menu-tab"
           as={ Link }
           to='/country-view'
           name='/country-view'
@@ -44,6 +46,7 @@ function TabNav(props) {
           Country View
         </Menu.Item>
         <Menu.Item
+          className="menu-tab"
           as={ Link }
           to='/saved'
           name='/saved'
