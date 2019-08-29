@@ -19,7 +19,7 @@ export default function Header() {
           />
         )}
         {localStorage.getItem("token") && (
-          <Link to="/" onClick={() => localStorage.clear()}>
+          <Link to="/map-view" onClick={() => localStorage.clear()}>
             <button className="btn logout">Logout</button>
           </Link>
         )}
