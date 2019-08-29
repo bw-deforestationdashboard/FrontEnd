@@ -28,6 +28,7 @@ export default function MapView () {
                 })}
             </select>
             <Map year={year}/>
+            <img className="img-map" src={require(`../assets/pct_forest_coverage_1990_to_2016_map.gif`)} />
             <h2>Prediction Maps</h2>
             <select onChange={handlePredictionYear}>
                 {predictionYearArray.map(yearItem => {
@@ -35,6 +36,7 @@ export default function MapView () {
                 })}
             </select>
             <Map year={predictionYear} />
+            <img className="img-map" src={require(`../assets/pct_forest_coverage_predictions_2017_to_2024_map.gif`)} />
         </div>
     );
 };

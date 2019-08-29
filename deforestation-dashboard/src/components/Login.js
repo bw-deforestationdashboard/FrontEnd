@@ -60,7 +60,7 @@ const Login = ({ setActiveUser, history }) => {
               onChange={changeHandler}
             />
           </label>
-          <button>Login</button>
+          <button className ="btn login-btn">Login</button>
         </form>
         <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
       </div>
