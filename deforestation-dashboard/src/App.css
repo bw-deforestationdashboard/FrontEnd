@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin: 0 auto;
+  padding-top: 10px;
 }
 
 * {
@@ -13,6 +13,12 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  color: #333333;
+  outline: none;
+}
+
+button, select {
+  cursor: pointer;
 }
 
 /* --------------------- Font sizing ---------------- */
@@ -22,11 +28,13 @@ html {
 }
 
 .menu-tab {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 4.8rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 300;
 }
 
 h2 {
@@ -41,6 +49,14 @@ select {
   font-size: 1.8rem;
 }
 
+label {
+  font-size: 1.8rem;
+}
+
+input {
+  font-size: 1.4rem;
+}
+
 /* ----------------- Sticky Footer ------------------- */
 
 .Login, .Signup, .Main {
@@ -51,11 +67,114 @@ footer {
   flex-shrink: 0;
 }
 
+/* ------------------- Layout ------------------------ */
+
 .Header {
+  width: 97%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.MapView, .CountryView {
+  text-align: center;
+  background-color: #f0f0f0;
+  padding-top: 20px;
+}
 
+select {
+  margin-bottom: 20px;
+}
 
+.img-map {
+  width: 80%;
+  max-width: 1250px;
+  max-height: 90vh;
+  margin-bottom: 15px;
+}
+
+/* --------------------- Buttons --------------------- */
+
+.btn {
+  padding: 10px;
+  background-color: #cf5c36;
+  border: 2px solid #CF5C36;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+  min-width: 90px;
+}
+
+.header-login {
+  margin-right: 8px;
+  color: #CF5C36;
+  background-color: white;
+}
+
+/* ----------------- Semantic Ui Menu Tabs----------- */
+
+.ui.inverted.green.menu, .ui.inverted.menu .green.active.item {
+  background-color: #859752;
+}
+
+.ui.green.menu .active.item {
+  border-color: #6D7A48!important;
+}
+
+.ui.menu {
+  margin-bottom: unset;
+}
+
+/* ----------------- Login and Signup pages----------- */
+
+.Login, .Signup {
+  padding: 40px 0 80px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.Login *, .Signup * {
+  margin-bottom: 10px;
+}
+
+.Login form, .Signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Login .logo, .Signup .logo {
+  margin-bottom: 20px;
+}
+
+input {
+  width: 300px;
+  border: 1px solid #999999;
+  padding: 14px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+label {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+select {
+  width: 100px;
+  padding: 7px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+}
+
+.MuiCardContent-root {
+  background-color: #f0f0f0;
+}

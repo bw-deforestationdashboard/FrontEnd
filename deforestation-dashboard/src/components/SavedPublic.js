@@ -22,7 +22,6 @@ const SavedPublic = props => {
       .then(res => {
         console.log("from put", res);
         setEditing(false);
-        setUser(user.username)
       })
       .catch(err => console.log("PUT error", err.response));
   };
