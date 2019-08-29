@@ -17,6 +17,10 @@
   outline: none;
 }
 
+button, select {
+  cursor: pointer;
+}
+
 /* --------------------- Font sizing ---------------- */
 
 html {
