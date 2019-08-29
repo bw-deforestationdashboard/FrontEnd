@@ -79,6 +79,8 @@ footer {
 
 .MapView, .CountryView {
   text-align: center;
+  background-color: #f0f0f0;
+  padding-top: 20px;
 }
 
 select {
@@ -117,6 +119,10 @@ select {
 
 .ui.green.menu .active.item {
   border-color: #6D7A48!important;
+}
+
+.ui.menu {
+  margin-bottom: unset;
 }
 
 /* ----------------- Login and Signup pages----------- */
@@ -166,4 +172,8 @@ select {
   padding: 7px;
   border: 1px solid #999999;
   border-radius: 3px;
+}
+
+.MuiCardContent-root {
+  background-color: #f0f0f0;
 }
