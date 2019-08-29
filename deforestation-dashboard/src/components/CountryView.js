@@ -23,15 +23,24 @@ export default function CountryList () {
        return <p>Loading country data...</p>
     }
 
+    const toArrayOfArrays = (array) => {
+        return Object.entries(array).filter((subArray) => subArray[0] !== "Country" && subArray[0] !== "Code");
+    }
+
+    // TODO - for percent data
+    // const percentArray = toArrayOfArrays(***percent-data-goes-here***).map((subArray) => subArray[1]);
+    // console.log(percentArray)
+
     return (
         <div className="content CountryView">
            <h2>Countries</h2>
-            {countries.map( (ctry, index) => {
-                const yearArray = Object.entries(ctry).filter((array) => array[0] !== "Country" && array[0] !== "Code");
+            {countries.map((countryArray, index) => {
+                const yearArray = toArrayOfArrays(countryArray);
 
                 return (
                     <Country
-                    name={ctry.Country}
+                    code={countryArray.Code}
+                    name={countryArray.Country}
                     yearArray={yearArray}
                     key={index}
                     />
