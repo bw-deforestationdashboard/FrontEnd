@@ -69,7 +69,7 @@ const Signup = (props) => {
               onChange={changeHandler}
             />
           </label>
-          <button>Register</button>
+          <button className="btn signup-btn">Register</button>
         </form>
         <p>
           Already have an account? <Link to="/login">Login here!</Link>

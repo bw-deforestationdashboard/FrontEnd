@@ -26,7 +26,7 @@ export default function Country(props) {
     },
 
     head: {
-      backgroundColor: yellow[400]
+      backgroundColor: '#f5e132',
     }
   }));
 
