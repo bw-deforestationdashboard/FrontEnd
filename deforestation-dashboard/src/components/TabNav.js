@@ -7,6 +7,7 @@ import PrivateRoute from './PrivateRoute';
 
 import MapView from './MapView';
 import CountryView from './CountryView';
+import NewsView from './NewsView';
 import SavedPublic from './SavedPublic';
 
 function TabNav(props) {
@@ -49,6 +50,16 @@ function TabNav(props) {
         <Menu.Item
           className="menu-tab"
           as={ Link }
+          to='/news-view'
+          name='/news-view'
+          active={activeItem === '/news-view'}
+          onClick={handleItemClick}
+        >
+          News
+        </Menu.Item>
+        <Menu.Item
+          className="menu-tab"
+          as={ Link }
           to='/saved'
           name='/saved'
           active={activeItem === '/saved'}
@@ -59,6 +70,7 @@ function TabNav(props) {
       </Menu>
       <Route path='/map-view' component={MapView} />
       <Route path='/country-view' component={CountryView} />
+      <Route path='/news-view' component={NewsView} />
       <PrivateRoute path='/saved' activeUser={props.activeUser} setActiveUser={props.setActiveUser} component={SavedPublic}/>
     </>
 )
