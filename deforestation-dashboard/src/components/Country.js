@@ -8,6 +8,11 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
+import CardActions from "@material-ui/core/CardActions";
+import Collapse from '@material-ui/core/Collapse';
+import clsx from 'clsx';
+
 // import yellow from "@material-ui/core/colors/yellow";
 
 export default function Country(props) {
@@ -25,9 +30,13 @@ export default function Country(props) {
     table: {
       minWidth: 650
     },
-
     head: {
-      backgroundColor: '#f5d132',
+      backgroundColor: "#f5d132"
+    },
+    expand: {
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
     }
   }));
 
@@ -39,6 +48,12 @@ export default function Country(props) {
 
   const classes = useStyles();
 
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  }
+
   return (
     <Card>
       <CardContent>
@@ -46,7 +61,13 @@ export default function Country(props) {
           <Table className={classes.table}>
             <TableHead className={classes.head}>
               <TableRow>
-                <TableCell style={{ fontSize: "1.8rem", fontWeight: "bold", lineHeight: "1" }}>
+                <TableCell
+                  style={{
+                    fontSize: "1.8rem",
+                    fontWeight: "bold",
+                    lineHeight: "1"
+                  }}
+                >
                   {props.name}
                 </TableCell>
                 {yearArray.map(year => {
@@ -80,6 +101,23 @@ export default function Country(props) {
             </TableBody>
           </Table>
         </Paper>
+        <CardActions>
+          <Button
+            size="medium"
+            style={{ fontSize: "1.3rem", margin: "0 auto" }}
+            className={clsx(classes.expand)}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            Click to display chart
+          </Button>
+        </CardActions>
+        <Collapse>
+          <CardContent>
+            <p>testing</p>
+          </CardContent>
+        </Collapse>
       </CardContent>
     </Card>
   );
