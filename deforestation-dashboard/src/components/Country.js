@@ -102,6 +102,9 @@ export default function Country(props) {
           </Table>
         </Paper>
         <CardActions>
+          <Button size="medium" style={{fontSize: "1.3rem"}}>
+            Save to My Charts
+          </Button>
           <Button
             size="medium"
             style={{ fontSize: "1.3rem", margin: "0 auto" }}
