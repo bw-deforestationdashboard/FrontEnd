@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import Chart from './Chart'
 
 const SavedPublic = (props) => {
   console.log(props)
@@ -46,6 +47,8 @@ const SavedPublic = (props) => {
       <button className="btn header-login" onClick={(e) => deleteUser(e, activeUser)}>
         I want to delete my account!
       </button>
+
+      <Chart legendPosition="bottom"/>
 
       {editing && (
         <form className="Login" onSubmit={handleSubmit}>
