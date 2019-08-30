@@ -1,5 +1,5 @@
-import React, {useContext} from "react";
-import {SavedContext} from '../contexts/SavedContext'
+import React, { useContext } from "react";
+import { SavedContext } from "../contexts/SavedContext";
 
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -12,8 +12,8 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import CardActions from "@material-ui/core/CardActions";
-import Collapse from '@material-ui/core/Collapse';
-import clsx from 'clsx';
+import Collapse from "@material-ui/core/Collapse";
+import clsx from "clsx";
 
 // import yellow from "@material-ui/core/colors/yellow";
 
@@ -36,9 +36,9 @@ export default function Country(props) {
       backgroundColor: "#f5d132"
     },
     expand: {
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shortest
+      })
     }
   }));
 
@@ -52,13 +52,13 @@ export default function Country(props) {
 
   const [expanded, setExpanded] = React.useState(false);
   const [selected, setSelected] = React.useState(false);
-
+  const [disabled, setDisabled] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
-  }
+  };
 
-  const {addItem} = useContext(SavedContext)
+  const { addItem } = useContext(SavedContext);
 
   return (
     <Card>
@@ -108,28 +108,38 @@ export default function Country(props) {
           </Table>
         </Paper>
         <CardActions>
-          <Button size="medium" style={{fontSize: "1.3rem"}}
-            onClick={()=>{
-              addItem(props["code"])
-              setSelected(true)
-            }}>
-            {selected ? "Saved to My Charts" : "Save to My Charts"}
-
-          </Button>
-          <Button
-            size="medium"
-            style={{ fontSize: "1.3rem", margin: "0 auto" }}
-            className={clsx(classes.expand)}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            {!expanded ? "Click to display chart" : "Click to close"}
-          </Button>
+          <div className="card-btns">
+            <Button
+              size="medium"
+              style={{ fontSize: "1.3rem" }}
+              className={clsx(classes.expand)}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              {!expanded ? "Display chart" : "Close chart"}
+            </Button>
+            <Button
+              disabled={disabled}
+              size="medium"
+              style={{ fontSize: "1.3rem" }}
+              onClick={() => {
+                addItem(props["code"]);
+                setSelected(true);
+                setDisabled(true);
+              }}
+            >
+              {selected ? "Saved to My Charts" : "Save to My Charts"}
+            </Button>
+          </div>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <img className="img-chart" alt="" src={require(`../assets/charts/${props.code}.png`)} />
+            <img
+              className="img-chart"
+              alt=""
+              src={require(`../assets/charts/${props.code}.png`)}
+            />
           </CardContent>
         </Collapse>
       </CardContent>

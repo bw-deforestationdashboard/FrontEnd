@@ -45,10 +45,6 @@ h3 {
   font-size: 2.2rem;
 }
 
-p {
-  font-size: 1.7rem;
-}
-
 button {
   font-size: 1.8rem;
 }
@@ -63,6 +59,10 @@ label {
 
 input {
   font-size: 1.4rem;
+}
+
+.MapView p {
+  font-size: 1.7rem;
 }
 
 /* ----------------- Sticky Footer ------------------- */
@@ -161,6 +161,10 @@ select {
 
 .username-btn {
   margin-right: 20px;
+}
+
+.card-btns {
+  margin: 0 auto;
 }
 
 /* ----------------- Semantic Ui Menu Tabs----------- */
