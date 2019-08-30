@@ -9,11 +9,11 @@ export default function Header() {
       <Logo />
       <div>
         {!localStorage.getItem("token") && (
-          <Button className="btn header-login" text="Login" link="/login" />
+          <Button className="btn inverse-btn" text="Login" link="/login" />
         )}
         {!localStorage.getItem("token") && (
           <Button
-            className="btn header-signup"
+            className="btn"
             text="Sign Up"
             link="/register"
           />

@@ -46,11 +46,11 @@ const SavedPublic = props => {
 
       <SavedCharts />
 
-      <button className="btn" onClick={() => setEditing(true)}>
+      <button className="btn username-btn" onClick={() => setEditing(true)}>
         I want to change my username!
       </button>
       <button
-        className="btn header-login"
+        className="btn inverse-btn"
         onClick={e => deleteUser(e, activeUser)}
       >
         I want to delete my account!
@@ -67,7 +67,7 @@ const SavedPublic = props => {
           ></input>
           <button className="btn">Save</button>
           <button
-            className="btn header-login"
+            className="btn inverse-btn"
             onClick={() => {
               setEditing(false);
             }}

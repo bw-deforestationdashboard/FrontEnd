@@ -153,10 +153,14 @@ select {
   min-width: 90px;
 }
 
-.header-login {
+.inverse-btn {
   margin-right: 8px;
   color: #CF5C36;
   background-color: white;
+}
+
+.username-btn {
+  margin-right: 20px;
 }
 
 /* ----------------- Semantic Ui Menu Tabs----------- */
