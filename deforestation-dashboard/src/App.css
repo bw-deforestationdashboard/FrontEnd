@@ -152,6 +152,11 @@ select {
   padding-bottom: 80px;
 }
 
+.chart {
+  width: 95%;
+  margin: 0 auto;
+}
+
 /* --------------------- Buttons --------------------- */
 
 .btn {
