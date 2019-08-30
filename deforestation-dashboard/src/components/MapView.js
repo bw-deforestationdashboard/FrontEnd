@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import axios from 'axios';
 import Map from './Map';
 
 export default function MapView () {
@@ -33,7 +32,7 @@ export default function MapView () {
             </div>
             <Map year={year}/>
             <h3>Timelapse</h3>
-            <img className="img-map" src={require(`../assets/pct_forest_coverage_1990_to_2016_map.gif`)} />
+            <img className="img-map"  alt="Forest Coverage" src={require(`../assets/pct_forest_coverage_1990_to_2016_map.gif`)} />
             <h2>Global Forest Cover Predictions</h2>
             <div className="select-year">
                 <p>Select a year:</p>
@@ -45,7 +44,7 @@ export default function MapView () {
             </div>
             <Map year={predictionYear} />
             <h3>Timelapse</h3>
-            <img className="img-map" src={require(`../assets/pct_forest_coverage_predictions_2017_to_2024_map.gif`)} />
+            <img className="img-map"  alt="Forest Coverage Predictions" src={require(`../assets/pct_forest_coverage_predictions_2017_to_2024_map.gif`)} />
         </div>
     );
 };
