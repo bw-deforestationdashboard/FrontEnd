@@ -51,6 +51,8 @@ export default function Country(props) {
   const classes = useStyles();
 
   const [expanded, setExpanded] = React.useState(false);
+  const [selected, setSelected] = React.useState(false);
+
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -107,8 +109,11 @@ export default function Country(props) {
         </Paper>
         <CardActions>
           <Button size="medium" style={{fontSize: "1.3rem"}}
-            onClick={()=>addItem(props["code"])}>
-            Save to My Charts
+            onClick={()=>{
+              addItem(props["code"])
+              setSelected(true)
+            }}>
+            {selected ? "Save to My Charts" : "Saved to My Charts"}
           </Button>
           <Button
             size="medium"
@@ -123,7 +128,7 @@ export default function Country(props) {
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-            <img className="img-chart" src={require(`../assets/charts/${props.code}.png`)} />
+            <img className="img-chart" alt="" src={require(`../assets/charts/${props.code}.png`)} />
           </CardContent>
         </Collapse>
       </CardContent>

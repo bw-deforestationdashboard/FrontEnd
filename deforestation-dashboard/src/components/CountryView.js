@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios';
 import Country from './Country';
 import { DataContext } from '../contexts/DataContext'
 
