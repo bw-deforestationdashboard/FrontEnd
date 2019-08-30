@@ -113,7 +113,7 @@ export default function Country(props) {
               addItem(props["code"])
               setSelected(true)
             }}>
-            {selected ? "Save to My Charts" : "Saved to My Charts"}
+            {selected ? "Saved to My Charts" : "Save to My Charts"}
 
           </Button>
           <Button
