@@ -15,7 +15,7 @@ export default function CountryList () {
                         country.Code !== "SDN"
             })
             setCountries(filteredData);
-            console.log(filteredData)
+            // console.log(filteredData)
          })
          .catch(err => console.log(err))
     }, [])

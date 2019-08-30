@@ -17,7 +17,7 @@ function App() {
 
   const [saved, setSaved] = useLocalStorage('saved', []);
   const addItem = item => {
-		setSaved([...saved, item]);
+    return saved.includes(item) ? console.log('here') : setSaved([...saved, item]);
 	};
 	const removeItem = item => {
 		setSaved([...saved].filter(i => i !== item))
