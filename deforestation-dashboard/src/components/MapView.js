@@ -20,22 +20,31 @@ export default function MapView () {
 
     return (
         <div className="content MapView">
-            <h2>Map</h2>
-            <select onChange={handleYear}>
-                {yearArray.map(yearItem => {
-                    return <option value={yearItem}>{yearItem}</option>
-                })}
-            </select>
+            <p className="map-desc">This collection of choropleth maps shows the percent of land area covered by forest in 212 countries in each year between 1990 and 2016. Forest coverage data is taken from the World Bank’s World Development Indicators data catalog. Country boundary data is taken from Thematic Mapping’s World Borders dataset. The same World Bank data used to generate the historical maps was used to predict forest coverage for the period 2017 to 2024. Those predictions are reflected in the maps at the bottom of the page.</p>
+            <h2>Global Forest Cover</h2>
+            <div className="select-year">
+                <p>Select a year:</p>
+                <select onChange={handleYear}>
+                    {yearArray.map(yearItem => {
+                        return <option value={yearItem}>{yearItem}</option>
+                    })}
+                </select>
+            </div>
             <Map year={year}/>
-            <img className="img-map" alt="Forest Coverage" src={require(`../assets/pct_forest_coverage_1990_to_2016_map.gif`)} />
-            <h2>Prediction Maps</h2>
-            <select onChange={handlePredictionYear}>
-                {predictionYearArray.map(yearItem => {
-                    return <option value={yearItem}>{yearItem}</option>
-                })}
-            </select>
+            <h3>Timelapse</h3>
+            <img className="img-map"  alt="Forest Coverage" src={require(`../assets/pct_forest_coverage_1990_to_2016_map.gif`)} />
+            <h2>Global Forest Cover Predictions</h2>
+            <div className="select-year">
+                <p>Select a year:</p>
+                <select onChange={handlePredictionYear}>
+                    {predictionYearArray.map(yearItem => {
+                        return <option value={yearItem}>{yearItem}</option>
+                    })}
+                </select>
+            </div>
             <Map year={predictionYear} />
-            <img className="img-map" alt="Forest Coverage Predictions" src={require(`../assets/pct_forest_coverage_predictions_2017_to_2024_map.gif`)} />
+            <h3>Timelapse</h3>
+            <img className="img-map"  alt="Forest Coverage Predictions" src={require(`../assets/pct_forest_coverage_predictions_2017_to_2024_map.gif`)} />
         </div>
     );
 };
