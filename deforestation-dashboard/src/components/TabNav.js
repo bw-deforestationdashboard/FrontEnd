@@ -18,7 +18,7 @@ function TabNav(props) {
     setActiveItem(name);
   }
 
-  useEffect(() => {
+  useEffect(activeItem => {
     if (activeItem !== props.location.pathname) {
       setActiveItem(props.location.pathname)
     }

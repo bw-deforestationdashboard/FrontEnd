@@ -15,8 +15,6 @@ import CardActions from "@material-ui/core/CardActions";
 import Collapse from "@material-ui/core/Collapse";
 import clsx from "clsx";
 
-// import yellow from "@material-ui/core/colors/yellow";
-
 export default function Country(props) {
   const { yearArray } = props;
   const useStyles = makeStyles(theme => ({
@@ -78,7 +76,7 @@ export default function Country(props) {
                 </TableCell>
                 {yearArray.map(year => {
                   return (
-                    <TableCell align="right" style={{ fontSize: "1.6rem" }}>
+                    <TableCell align="right" style={{ fontSize: "1.6rem" }} key={year[0]}>
                       {year[0]}
                     </TableCell>
                   );

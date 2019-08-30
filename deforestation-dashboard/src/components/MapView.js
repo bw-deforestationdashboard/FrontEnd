@@ -26,7 +26,7 @@ export default function MapView () {
                 <p>Select a year:</p>
                 <select onChange={handleYear}>
                     {yearArray.map(yearItem => {
-                        return <option value={yearItem}>{yearItem}</option>
+                        return <option key={yearItem} value={yearItem}>{yearItem}</option>
                     })}
                 </select>
             </div>
@@ -38,7 +38,7 @@ export default function MapView () {
                 <p>Select a year:</p>
                 <select onChange={handlePredictionYear}>
                     {predictionYearArray.map(yearItem => {
-                        return <option value={yearItem}>{yearItem}</option>
+                        return <option key={yearItem} value={yearItem}>{yearItem}</option>
                     })}
                 </select>
             </div>

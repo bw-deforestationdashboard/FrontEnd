@@ -10,13 +10,15 @@ export default function Footer() {
           <a
             href="https://databank.worldbank.org/source/world-development-indicators/preview/on"
             target="_blank"
+            rel="noopener noreferrer"
           >
-            <img src={wbgLogo} />
+            <img src={wbgLogo} alt="World Bank Logo"/>
           </a>
           <span> | </span>
           <a
             href="https://databank.worldbank.org/reports.aspx?source=2&series=AG.LND.FRST.K2"
             target="_blank"
+            rel="noopener noreferrer"
           >
             {" "}
             Forest cover in km<sup>2</sup>{" "}
@@ -24,6 +26,7 @@ export default function Footer() {
           <a
             href="https://databank.worldbank.org/reports.aspx?source=2&series=AG.LND.FRST.ZS"
             target="_blank"
+            rel="noopener noreferrer"
           >
             {" "}
             Forest cover in % of land area{" "}
@@ -34,6 +37,7 @@ export default function Footer() {
             className="tm-logo"
             href="http://thematicmapping.org/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <strong>thematic</strong>
             mapping
@@ -43,13 +47,14 @@ export default function Footer() {
           <a
             href="http://thematicmapping.org/downloads/world_borders.php"
             target="_blank"
+            rel="noopener noreferrer"
           >
             World Borders Dataset
           </a>
         </div>
       </div>
       <div>
-        <contact>info@deforestationdashboard.com</contact>
+        <address>info@deforestationdashboard.com</address>
         <p>© 2019 Deforestation Dashboard</p>
       </div>
     </footer>
