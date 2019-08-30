@@ -67,8 +67,13 @@ input {
 
 /* ----------------- Sticky Footer ------------------- */
 
-.Login, .Signup, .Main, .SavedPublic {
+.Login, .Signup, .Main {
   flex: 1 0 auto;
+  
+}
+
+.SavedPublic, .CountryView, .MapView, .loading {
+  min-height: calc(100vh - 10px - 61.6px - 10px - 53.025px - 143px);
 }
 
 footer {
@@ -116,6 +121,8 @@ select {
 
 .loading {
   text-align: center;
+  background-color: #f0f0f0;
+  padding: 30px 0;
 }
 
 .MapView {
@@ -139,6 +146,10 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+.SavedPublic {
+  padding-bottom: 80px;
 }
 
 /* --------------------- Buttons --------------------- */
