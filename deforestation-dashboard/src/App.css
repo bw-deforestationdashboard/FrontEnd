@@ -59,7 +59,8 @@ input {
 
 /* ----------------- Sticky Footer ------------------- */
 
-.Login, .Signup, .Main {
+
+.Login, .Signup, .Main, .SavedPublic {
   flex: 1 0 auto;
 }
 
@@ -67,7 +68,7 @@ footer {
   flex-shrink: 0;
 }
 
-/* ------------------- Layout ------------------------ */
+/* ------------------- Main ------------------------ */
 
 .Header {
   width: 97%;
@@ -77,14 +78,10 @@ footer {
   align-items: center;
 }
 
-.MapView, .CountryView {
+.content {
   text-align: center;
   background-color: #f0f0f0;
   padding-top: 20px;
-}
-
-select {
-  margin-bottom: 20px;
 }
 
 .img-map {
@@ -96,6 +93,22 @@ select {
 
 .img-chart {
   width: 100%;
+}
+
+select {
+  width: 100px;
+  padding: 7px;
+  border: 1px solid #999999;
+  margin-bottom: 20px;
+  border-radius: 3px;
+}
+
+.MuiCardContent-root {
+  background-color: #f0f0f0;
+}
+
+.loading {
+  text-align: center;
 }
 
 /* --------------------- Buttons --------------------- */
@@ -172,13 +185,40 @@ label {
   align-items: baseline;
 }
 
-select {
-  width: 100px;
-  padding: 7px;
-  border: 1px solid #999999;
-  border-radius: 3px;
+/* --------------------- Footer-------------------- */
+footer {
+  background-color: #7c816d;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-.MuiCardContent-root {
-  background-color: #f0f0f0;
+footer *, footer *:hover {
+  color: #bcbeb2;
+}
+
+.footer-data p {
+  margin-bottom: 10px;
+}
+
+.tm-logo {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1.4rem;
+}
+
+.tm-logo sup, .tm-logo strong {
+  color: #bcbeb2;
+  margin: unset;
+
+}
+
+.data-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.data-group * {
+  margin-right: 10px;
 }

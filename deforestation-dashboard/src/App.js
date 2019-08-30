@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import { DataContext } from "./contexts/DataContext";
 import { SavedContext } from "./contexts/SavedContext";
 import useLocalStorage from "./utils/useLocalStorage";
+import Footer from './components/Footer';
 
 import "./App.css";
 
@@ -16,7 +17,7 @@ function App() {
 
   const [saved, setSaved] = useLocalStorage('saved', []);
   const addItem = item => {
-		setSaved([...saved, item]);
+    return saved.includes(item) ? console.log('here') : setSaved([...saved, item]);
 	};
 	const removeItem = item => {
 		setSaved([...saved].filter(i => i !== item))
@@ -60,6 +61,7 @@ function App() {
           <Redirect from="/" to="/map-view" />
         </SavedContext.Provider>
       </DataContext.Provider>
+      <Footer />
     </div>
   );
 }

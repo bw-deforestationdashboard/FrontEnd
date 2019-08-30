@@ -41,7 +41,7 @@ const SavedPublic = props => {
   };
 
   return (
-    <div className="content CountryView">
+    <div className="content SavedPublic">
       <h2>Welcome!</h2>
 
       <SavedCharts />

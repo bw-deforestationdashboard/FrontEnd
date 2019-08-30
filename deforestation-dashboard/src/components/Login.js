@@ -69,7 +69,7 @@ const Login = ({ activeUser, setActiveUser, history }) => {
           Don't have an account? <Link to="/register">Sign up here!</Link>
         </p>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
