@@ -1,8 +1,14 @@
-import React from "react";
+import React, {Component} from "react";
 import wbgLogo from "../assets/logo-wbg-footer.svg";
 
-export default function Footer() {
-  return (
+class Footer extends React.Component {
+
+  constructor(){
+    super(); //unnecessary bc not using methods but CCR!!
+  }
+  
+  render(){
+    return (
     <footer>
       <div className="footer-data">
         <p>Data References:</p>
@@ -59,4 +65,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+}}
+
+export default Footer
