@@ -2,7 +2,6 @@ import React from 'react';
 
 import TabNav from './TabNav';
 import Header from './Header';
-import Footer from './Footer';
 
 export default function Main(props) {
    
@@ -10,7 +9,6 @@ export default function Main(props) {
       <div className='Main'>
          <Header />
          <TabNav {...props} />
-         {/* <Footer /> */}
       </div>
    )
 }

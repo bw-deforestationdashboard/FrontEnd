@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import * as Yup from "yup";
 
 import Logo from "./Logo";
-import Footer from "./Footer";
 
 const Login = ({ activeUser, setActiveUser, history }) => {
  
@@ -69,7 +67,6 @@ const Login = ({ activeUser, setActiveUser, history }) => {
           Don't have an account? <Link to="/register">Sign up here!</Link>
         </p>
       </div>
-      {/* <Footer /> */}
     </>
   );
 };

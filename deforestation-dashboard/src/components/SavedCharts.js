@@ -13,18 +13,28 @@ const SavedCharts = props => {
   return (
     <div className="content SavedCharts">
       {saved.map(i => {
-        return(<Card>
+        return (
+          <Card>
             <Paper>
-            <CardContent>
+              <CardContent>
                 <img
-              className="img-chart"
-              src={require(`../assets/charts/${i}.png`)}
-            /></CardContent>
+                  className="img-chart"
+                  src={require(`../assets/charts/${i}.png`)}
+                  alt=""
+                />
+              </CardContent>
             </Paper>
             <CardActions>
-                <Button size="medium" style={{fontSize: "1.3rem"}} onClick={()=>removeItem(i)}>Remove from My Charts</Button>
-            </CardActions> 
-          </Card>)
+              <Button
+                size="medium"
+                style={{ fontSize: "1.3rem" }}
+                onClick={() => removeItem(i)}
+              >
+                Remove from My Charts
+              </Button>
+            </CardActions>
+          </Card>
+        );
       })}
     </div>
   );
